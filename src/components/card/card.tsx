@@ -1,7 +1,6 @@
 import "./card.scss";
 import { useEffect, useState } from 'react';
 import { IoStarSharp } from 'react-icons/io5';
-const NoImage = "https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-no-image-available-icon-flatvector-illustration-picture-coming-creative-vector-png-image_40968940.jpg";
 import { CiHeart } from 'react-icons/ci';
 import { useDispatch, useSelector } from "react-redux";
 import { addFavoriteCard } from "../../store/favoriteSlice";
@@ -33,9 +32,8 @@ function Card({ product }: CardProps) {
 
 
   const PlaceholderImage = 'https://placehold.co/400x250?text=Yüklənir...';
-  const [imgSrc, setImgSrc] = useState<string>(
-    product.images?.[0] || PlaceholderImage
-  );
+  const imgSrc = product.images?.[0] || PlaceholderImage;
+  
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./myBasket.scss";
 import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { addSelectBasketCards, removeBasketCard, removeselectBasketCard } from "../../store/basketSlice";
 import Mostlike from "../../components/mostLike/mostLike";
 import type { Product } from "../../models/productsType";

@@ -11,7 +11,7 @@ import NotFound from "../notFound/notFound";
 function Category() {
     const { category } = useParams<string>();
     const [foundCategory, setFoundCategory] = useState<Product[]>([]);
-    const [error, setError] = useState("");
+    // const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [isPage, setIsPage] = useState<boolean>(true);
 
@@ -27,7 +27,6 @@ function Category() {
             console.log("all-data",all.data);
             const exist = all.data.some(item => item.slug === category);
             if (!exist) {
-                // return <NotFound />;
                 setIsPage(false);
                 console.log("tapılmadı bele sehıfe!")
             }

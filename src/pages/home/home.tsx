@@ -9,15 +9,6 @@ import { ClipLoader } from "react-spinners";
 import "./home.scss";
 import HomeSkeletonList from "../../components/homeSkeletonList/homeSkeletonList";
 
-// interface ProductRequests {
-//     config: {},
-//     data: {},
-//     headers: {},
-//     request: {},
-//     status: number,
-//     statusText: string,
-// }
-
 function Home() {
 
     const [allCategories, setAllCategories] = useState<Category[]>([]);
@@ -77,8 +68,8 @@ function Home() {
 
     return (
         <div className="home">
-            {!loading ? allProducts?.slice(0, allCategoriesLength).map((categoryProducts, i) => (
-                <CardList key={categoryProducts[0].id} products={categoryProducts} loading={loading} />
+            {!loading ? allProducts?.slice(0, allCategoriesLength).map((categoryProducts) => (
+                <CardList key={categoryProducts[0].id} products={categoryProducts} />
             )) : <HomeSkeletonList />}
             {loadMoreLoading ? <div className="home__spinner"><ClipLoader /></div>
                 : <button className="home__view-button" onClick={wiewMore} style={{ cursor: "pointer" }}>{loadText}</button>

@@ -20,7 +20,6 @@ interface storeType {
 
 function MyFavorite() {
 
-    const [products, setProducts] = useState<Product[]>([]);
     const favoriteCards = useSelector((store: storeType) => store.favorite.favoriCards);
 
     useEffect(() => {

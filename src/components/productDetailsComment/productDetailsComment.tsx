@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { FaUserCircle } from 'react-icons/fa';
 import { IoStarSharp } from 'react-icons/io5';
 import type { Product, Review } from '../../models/productsType';

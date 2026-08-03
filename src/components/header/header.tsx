@@ -4,7 +4,6 @@ import { FaRegUser, FaSearch, FaShoppingBasket } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import HeaderModal from "../headerModal/headerModal";
 import "./header.scss";
-import Search from "../../pages/search/search";
 
 function Header() {
     const [isHeaderModal, setIsHeaderModal] = useState(false);

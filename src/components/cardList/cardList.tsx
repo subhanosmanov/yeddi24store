@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import type { Product } from "../../models/productsType";
 
 interface CardListProps {
-    loading: boolean;
     products: Product[];
 }
 
-function CardList({ loading, products }: CardListProps) {
+function CardList({ products }: CardListProps) {
 
     return (
 
