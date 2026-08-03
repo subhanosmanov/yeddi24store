@@ -21,7 +21,7 @@
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(2px);
-        z-index: 1001; 
+        z-index: 1001;
     }
 
     &__wrapper {
@@ -39,6 +39,10 @@
 
     &__logo-title {
         color: $primary;
+
+        @include respond(sm) {
+            font-size: 15px;
+        }
     }
 
     &__search {
@@ -97,13 +101,14 @@
     &__list {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         font-size: 18px;
     }
 
     &__item {
         @include respond(sm) {
-            font-size: 15px;
+            font-size: 14px;
+            gap: 5px;
         }
     }
 
