@@ -1,0 +1,25 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.product-details-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__isActiveColor {
+        color: $primary;
+    }
+}

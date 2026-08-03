@@ -1,0 +1,122 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+    padding: 0 30px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+    background: white;
+
+    @include respond(sm) {
+        font-size: 15px;
+    }
+
+    &__modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        z-index: 1001; 
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+
+    &__logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__logo-title {
+        color: $primary;
+    }
+
+    &__search {
+        position: relative;
+        z-index: 1003;
+
+        &--desktop {
+            width: 40%;
+
+            @include respond(sm) {
+                display: none;
+            }
+        }
+
+        &--mobile {
+            display: none;
+
+            @include respond(sm) {
+                display: block;
+                position: relative;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    &__search-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $primary;
+    }
+
+    &__input {
+        padding-left: 45px;
+        width: 100%;
+        display: block;
+        // border: 1px solid #ddd;
+        // border-radius: 10px;
+        border-radius: 10px 10px 0 0;
+        height: 42px;
+        border: 1px solid $primary;
+
+        &--active {
+            border-bottom-color: transparent;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            z-index: 1004;
+        }
+
+        &:focus {
+            border-color: $primary;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    &__item {
+        @include respond(sm) {
+            font-size: 15px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

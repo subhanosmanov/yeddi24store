@@ -1,0 +1,12 @@
+@use "../src/styles/mixins" as *;
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        padding: 0 30px;
+        flex: 1;
+    }
+}

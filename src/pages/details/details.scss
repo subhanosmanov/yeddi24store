@@ -1,0 +1,233 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.product-details {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    &__layout {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+
+        // Mobil və Planşet ekranda alt-alta keçsin (sm və md)
+        @include respond(md) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    // Media İnfo Bölməsi
+    &__media-info {
+        flex: 1;
+        width: 100%;
+    }
+
+    &__image {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.06));
+        }
+    }
+
+    // Böyük ekranlarda (Desktop/lg) görünən şərh bloku
+    &__comment {
+        &--lg {
+            display: block;
+        }
+
+        // Mobil və planşetdə bu bloku gizlədirik
+        @include respond(md) {
+            display: none;
+        }
+
+        &--sm,
+        &--md {
+            display: none;
+
+            @include respond(md) {
+                display: block;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    // Məzmun Bölməsi
+    &__content {
+        position: sticky;
+        top: 100px;
+        z-index: 10;
+        flex: 1.2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include respond(md) {
+            position: static; // Kiçik və orta ekranlarda sticky söndürülür
+        }
+    }
+
+    // Endirim Banneri
+    &__banner {
+        background: linear-gradient(135deg, #e63946 0%, #b7094c 100%);
+        color: #ffffff;
+        padding: 16px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(230, 57, 70, 0.25);
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__banner-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    &__banner-message {
+        opacity: 0.9;
+        align-self: center;
+    }
+
+    &__category-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #2b2d42;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    &__description {
+        background-color: #f8f9fa;
+        padding: 16px;
+        border-radius: 10px;
+        border-left: 4px solid #e63946;
+    }
+
+    &__description-text {
+        color: #4a5568;
+        line-height: 1.6;
+        font-size: 15px;
+        margin: 0;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__rating-count {
+        font-weight: 700;
+        font-size: 16px;
+        color: #2b2d42;
+        background: #edf2f7;
+        padding: 2px 8px;
+        border-radius: 6px;
+    }
+
+    &__rating-stars {
+        display: flex;
+        gap: 3px;
+        color: #cbd5e0;
+        font-size: 18px;
+
+        .isActiveColor {
+            color: #ffb703;
+        }
+    }
+
+    // Qiymət Bölməsi
+    &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #fdf2f4;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px dashed #faa307;
+
+        &__price-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            &__price-label {
+                font-size: 14px;
+                color: #6c757d;
+            }
+
+            &__price-value {
+                font-size: 18px;
+                font-weight: 600;
+
+                &--old {
+                    text-decoration: line-through;
+                    color: #a0aec0;
+                }
+
+                &--new {
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #e63946;
+                }
+            }
+        }
+    }
+
+    // Düymə Hissəsi
+    &__actions {
+        margin-top: 10px;
+    }
+
+    &__button button {
+        width: 100%;
+        padding: 16px;
+        background-color: #2b2d42;
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 12px rgba(43, 45, 66, 0.15);
+
+        &:hover {
+            background-color: #d90429;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.25);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &__spinner {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+}

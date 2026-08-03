@@ -1,0 +1,43 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+
+.my-basket-modal {
+    z-index: 200000;
+    background-color: #fff;
+    position: fixed;
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__overlay {
+        &--active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Yarımşəffaf qara */
+            backdrop-filter: blur(4px);
+            /* Şüşə effekti (blurluq) */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1008;
+        }
+    }
+}
