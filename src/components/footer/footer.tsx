@@ -5,8 +5,8 @@ function Footer() {
   return (
     <footer className='footer'>
       <div className="footer__link">
-        <Link to="/myFavorite">Sevimliler</Link>
-        <Link to="/myBasket">Sebetim</Link>
+        <Link to="/myFavorite">My Favorite </Link>
+        <Link to="/myBasket">My Basket</Link>
       </div>
       <div className="footer__text">
         <p>
