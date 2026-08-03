@@ -45,10 +45,6 @@ function MyAccount() {
         },
     });
 
-    function formClick() {
-        console.log(formik);
-    }
-
     return (
         <div className='my-account'>
             <div className="my-account__layout">

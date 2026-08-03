@@ -11,10 +11,10 @@ import HomeSkeletonList from "../../components/homeSkeletonList/homeSkeletonList
 
 function Home() {
 
-    const [allCategories, setAllCategories] = useState<Category[]>([]);
+    // const [allCategories, setAllCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(false);
     const [allProducts, setAllProducts] = useState<Product[][]>([]);
-    const [error, setError] = useState("");
+    // const [error, setError] = useState("");
 
     const [loadMoreLoading, setLoadMoreLoading] = useState(false);
     const [allCategoriesLength, setAllCategoriesLength] = useState(6);
@@ -29,7 +29,7 @@ function Home() {
         try {
             const categoryRes = await AllCategories();
             console.log(categoryRes.data, "categoryRes")
-            setAllCategories(categoryRes.data);
+            // setAllCategories(categoryRes.data);
 
             const productRequests = categoryRes.data.map((category: Category) =>
                 Categories(category.slug)
@@ -42,7 +42,8 @@ function Home() {
             );
             setAllProducts(allDataProducts);
         } catch (error) {
-            setError("Məlumatları yükləmək alınmadı");
+            // setError("Məlumatları yükləmək alınmadı");
+            console.log(error);
         } finally {
             setLoading(false);
         }
