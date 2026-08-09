@@ -13,8 +13,9 @@ function Search() {
     const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
+        console.log(search);
         getFindSearchData();
-    }, []);
+    }, [search]);
 
     async function getFindSearchData() {
         try {

@@ -15,7 +15,7 @@ function RouterConfig() {
                 <Route path='/' element={<Home />} />
                 <Route path='/myFavorite' element={<MyFavorite />} />
                 <Route path='/myBasket' element={<MyBasket />} />
-                <Route path='/:category' element={<Category />} />
+                {/* <Route path='/:category' element={<Category />} /> */}
                 <Route path='/category/:category' element={<Category />} />
                 <Route path='/category/:category/:id' element={<Details />} />
                 <Route path='/search/:search' element={<Search />} />
